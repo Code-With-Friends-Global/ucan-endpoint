@@ -37,7 +37,7 @@ export async function POST(req: Request) {
 
   const { did } = await req.json()
   const audience = DID.parse(did)
-  const abilities = ['space/blob/add', 'space/index/add', 'filecoin/offer', 'upload/add']
+  const abilities = ['space/blob/add', 'space/index/add', 'upload/add']
   const expiration = Math.floor(Date.now() / 1000) + (60 * 60 * 24) // 24 hours from now
   const delegation = await client.createDelegation(audience, abilities, { expiration })
 
