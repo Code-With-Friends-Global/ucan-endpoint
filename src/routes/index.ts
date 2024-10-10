@@ -1,19 +1,17 @@
-var express = require('express');
-var router = express.Router();
-
-/* GET home page. */
-router.get('/', function(req, res, next) {
-  res.render('index', { title: 'Express' });
-});
+import { Router } from 'express';
 
 import * as Client from '@web3-storage/w3up-client'
 import { StoreMemory } from '@web3-storage/w3up-client/stores/memory'
 import * as Proof from '@web3-storage/w3up-client/proof'
 import { Signer } from '@web3-storage/w3up-client/principal/ed25519'
 import * as DID from '@ipld/dag-ucan/did'
+import { IReq, IRes } from './common/types';
+
+
+const apiRouter = Router();
 
 // From https://web3.storage/docs/how-to/upload/
-async function backend(did) {
+async function backend(did: string) {
   // Load client with specific private key
   const principal = Signer.parse(process.env.KEY)
   const store = new StoreMemory()
@@ -36,9 +34,12 @@ async function backend(did) {
 }
 
 /* GET home page. */
-router.post('/ucan', function(req, res, next) {
-  req
+apiRouter.post('/ucan', async (req: IReq, res: IRes) => {
+  const { did } = req.body as { did: string };
+  res.json({ delegation: await backend(did) });
 });
 
 
-module.exports = router;
+// **** Export default **** //
+
+export default apiRouter;
