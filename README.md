@@ -1,35 +1,36 @@
-## About
+This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
-This project was created with [express-generator-typescript](https://github.com/seanpmaxwell/express-generator-typescript).
+## Getting Started
 
+First, run the development server:
 
-## Available Scripts
+```bash
+npm run dev
+# or
+yarn dev
+# or
+pnpm dev
+# or
+bun dev
+```
 
-### `npm run dev` or `npm run dev:hot` (hot reloading)
+Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-Run the server in development mode.
+You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
 
-### `npm test` or `npm run test:hot` (hot reloading)
+This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
 
-Run all unit-tests.
+## Learn More
 
-### `npm test -- "name of test file" (i.e. users).`
+To learn more about Next.js, take a look at the following resources:
 
-Run a single unit-test.
+- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
+- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
 
-### `npm run lint`
+You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
 
-Check for linting errors.
+## Deploy on Vercel
 
-### `npm run build`
+The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
-Build the project for production.
-
-### `npm start`
-
-Run the production build (Must be built first).
-
-
-## Additional Notes
-
-- If `npm run dev` gives you issues with bcrypt on MacOS you may need to run: `npm rebuild bcrypt --build-from-source`. 
+Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
